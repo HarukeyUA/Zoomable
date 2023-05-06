@@ -57,6 +57,9 @@ kotlin {
                 implementation(libs.compose.runtime.jetpack)
                 implementation(libs.compose.foundation.jetpack)
                 implementation(libs.compose.ui.util.jetpack)
+                // force upgrade to 1.1.0 because its required by androidTestImplementation,
+                // and without this statement AGP will silently downgrade to tracing:1.0.0
+                implementation(libs.androidx.tracing)
             }
         }
         val androidInstrumentedTest by getting {
